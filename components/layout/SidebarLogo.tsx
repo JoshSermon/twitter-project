@@ -16,5 +16,3 @@ const SidebarLogo = () => {
 }
 
 export default SidebarLogo
-
-// Stopped at 14.56
