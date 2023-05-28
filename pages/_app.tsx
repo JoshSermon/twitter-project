@@ -7,10 +7,13 @@ import '../styles/globals.css';
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
-    <Modal />
+    <Modal isOpen title="Test Modal"/>
   <Layout>
   <Component {...pageProps} />
   </Layout>
   </>
   )
 }
+
+
+// Stopped 41:56 - May 28th, 2023
