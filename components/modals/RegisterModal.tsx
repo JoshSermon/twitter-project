@@ -93,6 +93,3 @@ const RegisterModal = () => {
 }
 
 export default RegisterModal
-
-
-// Stopped at 1:02:38 - May 30th, 2023
