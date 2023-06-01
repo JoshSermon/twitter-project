@@ -38,4 +38,11 @@ To fix error with Typescript import -
 In tsconfig.js: "allowSyntheticDefaultImports": true,
 Install @Types: npm i -D @types/react
 
+Install Zustand
+
+
+Install Prisma
+npm install -D prisma
+npx prisma init
+
 This should fix errors with Typescript and React. 
