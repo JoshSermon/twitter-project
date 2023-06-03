@@ -33,6 +33,38 @@ model User {
 
 model Post{
     id String @id @default(auto()) @map("_id") @db.ObjectId
+    body String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    userId String @db.ObjectId
+    likedIds String[] @db.ObjectId
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    comments Comment[]
 }
 
-// Stopped at 1:13:37 - June 1st, 2023
+model Comment {
+    id String @id @default(auto()) @map("_id") @db.ObjectId
+    body String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+    userId String @db.ObjectId
+    postId String @db.ObjectId
+
+    user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+    post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model Notification {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  body String
+  createdAt DateTime @default(now())
+  userId String @db.ObjectId
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+}
+
+// Stopped at 1:17:40 - June 2st, 2023
+// Fix Bug On Getting Prisma To Connect To Updated Code. 
