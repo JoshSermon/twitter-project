@@ -65,6 +65,3 @@ model Notification {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
 }
-
-// Stopped at 1:17:40 - June 2st, 2023
-// Fix Bug On Getting Prisma To Connect To Updated Code. 

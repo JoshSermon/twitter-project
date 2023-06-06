@@ -46,3 +46,9 @@ npm install -D prisma
 npx prisma init
 
 This should fix errors with Typescript and React. 
+
+For API/AUTH WITH TYPESCRIPT
+npm install bcrypt
+npm install -D @types/bcrypt
+npm install next-auth
+npm install @next-auth/prisma-adapter
