@@ -52,4 +52,4 @@ export default NextAuth({
     secret: process.env.NEXTAUTH_SECRET
 })
 
-// Stopped at 1:26:40 - June 6th, 2023
+// Stopped at 1:30:30 - June 7th, 2023
