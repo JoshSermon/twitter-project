@@ -1,6 +1,8 @@
 import { NextApiRequest } from "next";
 import { getSession } from 'next-auth/react';
 
+import prisma from '../libs/prismadb';
+
 const serverAuth = async( req: NextApiRequest) => {
     const session = await getSession({ req });
 
@@ -8,6 +10,17 @@ const serverAuth = async( req: NextApiRequest) => {
         throw new Error('Not signed in');
     }
 
-}
+    const currentUser = await prisma.user.findUnique({
+        where: {
+            email: session.user.email
+        }
+    });
 
-// Stopped at 1:32:00 - June 8th, 2023
+    if (!currentUser) {
+        throw new Error('Not signed in');
+    }
+
+    return { currentUser }
+};
+
+export default serverAuth;
