@@ -55,3 +55,5 @@ npm install @next-auth/prisma-adapter
 
 npm install swr
 npm install axios
+
+npm install react-hot-toast

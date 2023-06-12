@@ -13,4 +13,4 @@ const useCurrentUser = () => {
     }
 };
 
-// Stopped at 1:36:00 - June 9th, 2023
+export default useCurrentUser;
