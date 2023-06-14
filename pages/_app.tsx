@@ -22,5 +22,3 @@ export default function App({ Component, pageProps }: AppProps) {
   )
 }
 
-
-// Stopped at 1:40:00 - June 10th, 2023
