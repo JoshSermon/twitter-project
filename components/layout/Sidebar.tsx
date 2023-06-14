@@ -2,11 +2,13 @@ import React from 'react';
 import { FaUser } from 'react-icons/fa';
 import { BsHouseFill, BsBellFill } from 'react-icons/bs';
 import { BiLogOut } from 'react-icons/bi';
+import { signOut } from 'next-auth/react';
+import useCurrentUser from '../../hooks/useCurrentUser';
 import SidebarLogo from './SidebarLogo';
 import SidebarItem from './SidebarItem';
 import SidebarTweetButton from './SidebarTweetButton';
-import useCurrentUser from '../../hooks/useCurrentUser';
-import { signOut } from 'next-auth/react';
+
+
 
 
 const Sidebar = () => {
@@ -20,12 +22,14 @@ const Sidebar = () => {
         {
             label: 'Notifications',
             href: '/notifications',
-            icon: BsBellFill
+            icon: BsBellFill,
+            auth: true
         },
         {
             label: 'Profile',
             href: '/users/123',
-            icon: FaUser
+            icon: FaUser,
+            auth: true
         },
     ]
 
@@ -40,6 +44,7 @@ const Sidebar = () => {
                     href={item.href}
                     label={item.label}
                     icon={item.icon}
+                    auth={item.auth}
                     />
                 ))}
                 {currentUser && (
@@ -49,7 +54,7 @@ const Sidebar = () => {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Sidebar
