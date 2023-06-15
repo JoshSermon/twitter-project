@@ -13,6 +13,7 @@ import SidebarTweetButton from './SidebarTweetButton';
 
 const Sidebar = () => {
     const { data: currentUser } = useCurrentUser();
+          
     const items = [
         {
             label: 'Home',
@@ -31,7 +32,7 @@ const Sidebar = () => {
             icon: FaUser,
             auth: true
         },
-    ]
+    ];
 
     return (
         <div className="col-span-1 h-full pr-4 md:pr-6">
@@ -48,8 +49,7 @@ const Sidebar = () => {
                     />
                 ))}
                 {currentUser && (
-                <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout" />
-                )}
+                    <SidebarItem onClick={() => signOut()} icon={BiLogOut} label="Logout" /> )}
                 <SidebarTweetButton />
                 </div>
             </div>
