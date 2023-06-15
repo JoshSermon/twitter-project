@@ -17,8 +17,8 @@ export default function App({ Component, pageProps }: AppProps) {
   <LoginModal />
   <Layout>
       <Component { ...pageProps} />
-  </ Layout>
-  </ SessionProvider>
+  </Layout>
+  </SessionProvider>
   )
 }
 
